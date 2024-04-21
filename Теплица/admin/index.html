@@ -1,0 +1,266 @@
+<!-- на 700px в модальном окне исчезает кнопка -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles/reset.css"> -->
+    
+    <link rel="stylesheet" href="styles/style.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="index.js" defer></script>
+    <header>
+        <div class="profile">
+            <div class="content">
+                <a href="#">
+                    <img src="img/icon_house.png" alt="" class="main-img">
+                </a>
+                <p class="content-title">Green House</h3>
+            </div>
+        </div>
+        <div class="sidebar">
+            
+            <ul>
+                <li>
+                    <a href="#" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Теплица</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Оборудование</span>
+                    </a>
+                </li>
+                <br>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Профиль</span>
+                    </a>
+                </li>
+                
+            </ul>
+
+            <div class="logout">
+                <a href="" class="logout__btn">
+                    <img src="img/log-out.svg" alt="">
+                    <p>Log out</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+
+            <div class="header__line">
+                <div class="line-back">
+                    <a href="">
+                        <img src="img/back.svg" alt="">
+                    </a>
+                </div>
+                <div class="line-title">
+                    <h5>Теплица 1</h5>
+                </div>
+                <div class="line-reboot">
+                    <a href="">
+                        <img src="img/reload.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- <div class="select-box">
+                <div class="select-box__current" tabindex="1">
+                  <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="0" value="https://www.google.com" name="Ben" checked="checked">
+                    <p class="select-box__input-text">Выберите культуру</p>
+                  </div>
+                  <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="1" value="https://www.youtube.com" name="Ben">
+                    <p class="select-box__input-text">Кукуруза</p>
+                  </div>
+                  <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="2" value="3" name="Ben">
+                    <p class="select-box__input-text">Томат</p>
+                  </div>
+                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_5121.svg" alt="Arrow Icon" aria-hidden="true">
+                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_5121.svg" alt="Arrow Icon" aria-hidden="true">
+                </div>
+                <ul class="select-box__list">
+                  <li class="list-li">
+                    <label class="select-box__option" for="0" aria-hidden="aria-hidden">Выберите культуру</label>
+                  </li>
+                  <li class="list-li">
+                    <label class="select-box__option" for="1" aria-hidden="aria-hidden">Кукуруза</label>
+                  </li>
+                  <li class="list-li">
+                    <label class="select-box__option" for="2" aria-hidden="aria-hidden">Томат</label>
+                  </li>
+                </ul>
+            </div> -->
+
+
+            
+
+            <div class="content__title">
+                <p class="title">Параметры теплицы</h1>
+                <p class="subtitle">Обновлено 36 минут назад</p>
+            </div>
+
+            <div class="content__box">
+                <!-- <div class="box-row">
+                    <a href="#" class="open-modal">
+                        <div class="content__box-stat">
+                            
+                            <div class="stat__img">
+                                <img src="icons/temp.svg" alt="">
+                            </div>
+                            <div class="stat__content">
+                                <div class="stat__content-title">Температура</div>
+                                <div class="stat__content-value">23°С</div>
+                            </div>
+                        </div>
+
+                    </a>
+                    <a href="#">
+                        <div class="content__box-stat bad">
+                            <div class="stat__img">
+                                <img src="icons/sun.svg" alt="">
+                            </div>
+                            <div class="stat__content ">
+                                <div class="stat__content-title">Уровень освещённости</div>
+                                <div class="stat__content-value">12000 лк</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="box-row">
+                    <a href="#">
+                        <div class="content__box-stat">
+                            <div class="stat__img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="50" width="65" viewBox="0 0 640 512">
+                                    <path d="M640 329.3c0 65.9-52.5 114.4-117.5 114.4-165.9 0-196.6-249.7-359.7-249.7-146.9 0-147.1 212.2 5.6 212.2 42.5 0 90.9-17.8 125.3-42.5 5.6-4.1 16.9-16.3 22.8-16.3s10.9 5 10.9 10.9c0 7.8-13.1 19.1-18.7 24.1-40.9 35.6-100.3 61.2-154.7 61.2-83.4 .1-154-59-154-144.9s67.5-149.1 152.8-149.1c185.3 0 222.5 245.9 361.9 245.9 99.9 0 94.8-139.7 3.4-139.7-17.5 0-35 11.6-46.9 11.6-8.4 0-15.9-7.2-15.9-15.6 0-11.6 5.3-23.7 5.3-36.3 0-66.6-50.9-114.7-116.9-114.7-53.1 0-80 36.9-88.8 36.9-6.2 0-11.2-5-11.2-11.2 0-5.6 4.1-10.3 7.8-14.4 25.3-28.8 64.7-43.7 102.8-43.7 79.4 0 139.1 58.4 139.1 137.8 0 6.9-.3 13.7-1.2 20.6 11.9-3.1 24.1-4.7 35.9-4.7 60.7 0 111.9 45.3 111.9 107.2z"/>
+                                </svg>
+                            </div>
+                            <div class="stat__content">
+                                <div class="stat__content-title">Влажность воздуха</div>
+                                <div class="stat__content-value">50%</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="content__box-stat">
+                            <div class="stat__img">
+                                <img src="icons/droplet.svg" alt="">
+                            </div>
+                            <div class="stat__content">
+                                <div class="stat__content-title">Влажность почвы</div>
+                                <div class="stat__content-value">65%</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div> -->
+                <div class="box">
+                    <a class="open-modal">
+                        <div class="content__box-stat">
+                            <div class="stat__img">
+                                <img src="icons/temp.svg" alt="">
+                            </div>
+                            <div class="stat__content">
+                                <div class="stat__content-title">Температура</div>
+                                <div class="stat__content-value">23°С</div>
+                            </div>
+                        </div>
+
+                    </a>
+                    <a class="open-modal">
+                        <div class="content__box-stat bad">
+                            <div class="stat__img">
+                                <img src="icons/sun.svg" alt="">
+                            </div>
+                            <div class="stat__content bad-stat">
+                                <div class="stat__content-title">Освещённость</div>
+                                <div class="stat__content-value">12000 лк</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="open-modal">
+                        <div class="content__box-stat">
+                            <div class="stat__img">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="50" width="65" viewBox="0 0 640 512">
+                                    <path d="M640 329.3c0 65.9-52.5 114.4-117.5 114.4-165.9 0-196.6-249.7-359.7-249.7-146.9 0-147.1 212.2 5.6 212.2 42.5 0 90.9-17.8 125.3-42.5 5.6-4.1 16.9-16.3 22.8-16.3s10.9 5 10.9 10.9c0 7.8-13.1 19.1-18.7 24.1-40.9 35.6-100.3 61.2-154.7 61.2-83.4 .1-154-59-154-144.9s67.5-149.1 152.8-149.1c185.3 0 222.5 245.9 361.9 245.9 99.9 0 94.8-139.7 3.4-139.7-17.5 0-35 11.6-46.9 11.6-8.4 0-15.9-7.2-15.9-15.6 0-11.6 5.3-23.7 5.3-36.3 0-66.6-50.9-114.7-116.9-114.7-53.1 0-80 36.9-88.8 36.9-6.2 0-11.2-5-11.2-11.2 0-5.6 4.1-10.3 7.8-14.4 25.3-28.8 64.7-43.7 102.8-43.7 79.4 0 139.1 58.4 139.1 137.8 0 6.9-.3 13.7-1.2 20.6 11.9-3.1 24.1-4.7 35.9-4.7 60.7 0 111.9 45.3 111.9 107.2z"/>
+                                </svg>
+                            </div>
+                            <div class="stat__content">
+                                <div class="stat__content-title">Влажность воздуха</div>
+                                <div class="stat__content-value">50%</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="open-modal">
+                        <div class="content__box-stat">
+                            <div class="stat__img">
+                                <img src="icons/droplet.svg" alt="">
+                            </div>
+                            <div class="stat__content">
+                                <div class="stat__content-title">Влажность почвы</div>
+                                <div class="stat__content-value">65%</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="btn">
+                    <button class="button" type="button"> Отчёт </button>
+                </div>
+            </div>
+
+
+            <div class="modal" data-modal="1">
+                <!--   Svg иконка для закрытия окна  -->
+                
+                <img class="modal__cross js-modal-close" src="icons/close.svg" alt="">
+
+                <p class="modal__title">Мониторинг теплицы</p>
+                <p class="modal__subtitle">График изменений температуры</p>
+                <p class="date">Выберите промежуток</p>
+                <input class="calendar" type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+                <div class="graphs">
+                    <div id="graph"></div>
+                </div>
+
+
+
+                <div class="btn btn-graph">
+                    <button class="button button-graph" type="button"> Скачать </button>
+                </div>
+
+                
+            </div>
+
+            <div class="overlay js-overlay-modal"></div>
+
+
+            <!-- раскоментить потом -->
+            
+            
+        </div>
+    </main>
+
+
+</body>
+</html>
